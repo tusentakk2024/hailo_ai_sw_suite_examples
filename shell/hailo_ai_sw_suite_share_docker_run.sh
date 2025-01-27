@@ -232,7 +232,8 @@ function prepare_docker_args() {
     if [[ -d "/var/lib/dkms" ]]; then
          DOCKER_ARGS+="-v /var/lib/dkms:/var/lib/dkms "
     fi
-    if [[ $NVIDIA_GPU_EXIST ]] && [[ $NVIDIA_DOCKER_EXIST ]]; then
+#    if [[ $NVIDIA_GPU_EXIST ]] && [[ $NVIDIA_DOCKER_EXIST ]]; then
+    if [[ $NVIDIA_DOCKER_EXIST ]]; then
         DOCKER_ARGS+="--gpus all "
     fi
     if [[ $HAILORT_ENABLE_SERVICE ]]; then
